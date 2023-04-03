@@ -3,7 +3,7 @@
 
 /**
  * print_diagsums - function that prints the sum of the two diagonals
- * @a: value
+ * @a: pointer
  * @size: value
  * Return: void
  */
@@ -27,6 +27,6 @@ void print_diagsums(int *a, int size)
 			}
 		}
 	}
-	printf("Sum of diagonal 1: %d\n", sum1);
-	printf("Sum of diagonal 2: %d\n", sum2);
+	printf("Diagonal 1 Sum: %d\n", sum1);
+	printf("Diagonal 2 Sum: %d\n", sum2);
 }
