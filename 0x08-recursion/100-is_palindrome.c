@@ -1,5 +1,27 @@
 #include "main.h"
-#include <string.h>
+
+int is_palindrome_helper(char *s, int i,  int j);
+
+/**
+ * is_palindrome_helper  - helper function for is_palindrome
+ * @s: number
+ * @i: int
+ * @j: int
+ * Return: 1 or 0
+ */
+
+int is_palindrome_helper(char *s, int i, int j)
+{
+	if (i >= j)
+	{
+		return (1);
+	}
+	if (s[i] != s[j])
+	{
+		return (0);
+	}
+	return (is_palindrome_helper(s, i + 1, j - 1));
+}
 
 /**
  * is_palindrome - function that returns 1
@@ -11,14 +33,8 @@
 
 int is_palindrome(char *s)
 {
-	int i, len;
-
-	len = strlen(s);
-
-	for (i = 0; i < len / 2; i++)
+	int len = strlen(s);
 	{
-		if (s[i] != s[len - i - 1])
-			return (0);
+		return (is_palindrome_helper(s, 0, len - 1));
 	}
-	return (1);
 }
