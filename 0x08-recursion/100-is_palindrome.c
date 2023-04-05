@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int main void (char s1, char s2);
+
 /**
  * is_palindrome - function that returns a string
  * @s: string
@@ -26,7 +28,7 @@ int is_palindrome(char *s)
 	return (1);
 }
 
-int main void (char s1, char s2);
+int main void (char s1, char s2)
 {
 	char s1[] = "madam";
 	char s2[] = "panama";
