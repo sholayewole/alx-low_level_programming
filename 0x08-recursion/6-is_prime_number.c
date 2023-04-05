@@ -1,10 +1,10 @@
 #include "main.h"
 
+int is_prime_helper(int n, int i)
+
 /**
  * is_prime_number - function that returns 1
  * if the input int is a prime number
- * is_prime_helper - helper funcion
- * @i: int
  * @n: int
  * Return: n
  */
@@ -20,6 +20,13 @@ int is_prime_number(int n)
 		return (is_prime_helper(n, 2));
 	}
 }
+
+/**
+ * is_prime_helper - helper function for is_prime_number
+ * @n: number
+ * @i: number
+ * Return: n or -1
+ */
 
 int is_prime_helper(int n, int i)
 {
