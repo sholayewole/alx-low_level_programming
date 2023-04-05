@@ -1,12 +1,12 @@
 #include "main.h"
+#include <stdio.h>
 
 int is_prime_helper(int n, int i)
 
 /**
- * is_prime_number - function that returns 1
- * if the input int is a prime number
+ * is_prime_number - function that returns prime number
  * @n: int
- * Return: n
+ * Return: 1 or 0
  */
 
 int is_prime_number(int n)
