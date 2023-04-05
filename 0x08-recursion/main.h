@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
-int main void (char s1, char s);
+int main (void);
 int _putchar(char c);
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
