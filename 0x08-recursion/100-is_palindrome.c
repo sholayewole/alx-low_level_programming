@@ -1,40 +1,37 @@
 #include "main.h"
-
-int is_palindrome_helper(char *s, int i,  int j);
+#include <stdio.h>
 
 /**
- * is_palindrome - function that returns 1
- * if a string is a palindrome and 0 if not
+ * is_palindrome - function that returns a string
  * @s: string
- *
  * Return: 1 or 0
  */
 
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
+	char *start = s;
+	char *end = s + len - 1;
+
+	while (start < end)
 	{
-		return (is_palindrome_helper(s, 0, len - 1));
+		if (*start != *end)
+		{
+			return (0);
+		}
+		start++;
+		end--;
 	}
+	return (1);
 }
 
-/**
- * is_palindrome_helper  - helper function for is_palindrome
- * @s: number
- * @i: int
- * @j: int
- * Return: 1 or 0
- */
-
-int is_palindrome_helper(char *s, int i, int j)
+int main void (char s1, char s2)
 {
-	if (i >= j)
+	char s1[] = "madam";
+	char s2[] = "panama";
 	{
-		return (1);
-	}
-	if (s[i] != s[j])
-	{
+		printf("%s is %s palindrome\n", s1, is_palindrome(s1) ? "a" : "not a");
+		printf("%s is %s palindrome\n", s2, is_palindrome(s1) ? "a" : "not a");
 		return (0);
 	}
-	return (is_palindrome_helper(s, i + 1, j - 1));
 }
