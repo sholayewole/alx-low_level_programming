@@ -15,8 +15,11 @@ int is_palindrome(char *s)
 	{
 		return (1);
 	}
-	char first = *s;
-	char last = *(s + len - 1);
+	char first;
+	char last;
+
+	first = *s;
+	last = *(s + len - 1);
 
 	if (first != last)
 	{
