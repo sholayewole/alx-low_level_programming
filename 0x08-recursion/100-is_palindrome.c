@@ -1,5 +1,5 @@
-#include "main.h"
 #include <string.h>
+#include "main.h"
 
 /**
  * is_palindrome - function that returns a string
@@ -14,7 +14,7 @@ int is_palindrome(char *s)
 	char *end = s + len - 1;
 
 	while (start < end)
-	{
+	{i
 		if (*start != *end)
 		{
 			return (0);
@@ -23,15 +23,4 @@ int is_palindrome(char *s)
 		end--;
 	}
 	return (1);
-}
-
-int main(void)
-{
-	char s1[] = "madam";
-	char s2[] = "panama";
-	{
-		printf("%s is %s palindrome\n", s1, is_palindrome(s1) ? "a" : "not a");
-		printf("%s is %s palindrome\n", s2, is_palindrome(s1) ? "a" : "not a");
-		return (0);
-	}
 }
