@@ -10,17 +10,18 @@
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
-	char *start = s;
-	char *end = s + len - 1;
 
-	while (start < end)
+	if (len <= 1)
 	{
-		if (*start != *end)
-		{
-			return (0);
-		}
-		start++;
-		end--;
+		return (1);
 	}
-	return (1);
+	char first = *s;
+	char last = *(s + len - 1);
+
+	if (first != last)
+	{
+		return (0);
+	}
+	*(s + len - 1) = '\0';
+	return (is_palindrome(s + 1));
 }
