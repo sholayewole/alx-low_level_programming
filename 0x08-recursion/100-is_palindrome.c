@@ -14,7 +14,7 @@ int is_palindrome(char *s)
 	char *end = s + len - 1;
 
 	while (start < end)
-	{i
+	{
 		if (*start != *end)
 		{
 			return (0);
