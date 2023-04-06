@@ -10,13 +10,12 @@
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
+	char first, last;
 
 	if (len <= 1)
 	{
 		return (1);
 	}
-	char first, last;
-
 	first = *s;
 	last = *(s + len - 1);
 
