@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	(void) argc;
+	(void)argv;
 	char *myProgram = argv[0];
 	{
 	printf("%s\n", myProgram);
