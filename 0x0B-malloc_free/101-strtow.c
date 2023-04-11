@@ -31,7 +31,7 @@ int count_nike(char *str)
 char **strtow(char *str)
 {
 	char **nike;
-	int i, j, k, len, count;
+	int i, j = 0, k, len, count;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -41,7 +41,7 @@ char **strtow(char *str)
 	if (nike == NULL)
 		return (NULL);
 
-	for (i = 0; j = 0; i < len; i++)
+	for (i = 0, j = 0; i++)
 	{
 		if (str[i] != ' ')
 		{
