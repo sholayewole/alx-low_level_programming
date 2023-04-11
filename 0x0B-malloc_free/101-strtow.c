@@ -4,6 +4,25 @@
 #include <stdio.h>
 
 /**
+ * count_nike - counts number of words in a string
+ * @str: string
+ * Return: number of words in string
+ */
+
+int count_nike(char *str)
+{
+	int count = 0, i = 0;
+
+	while (str[i])
+	{
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + j] == '\0'))
+			count++;
+		i++;
+	}
+	return (count);
+}
+
+/**
  * strtow - function that splits a string into words
  * @str: string
  * Return: NULL
