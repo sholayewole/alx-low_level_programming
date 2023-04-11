@@ -41,7 +41,7 @@ char **strtow(char *str)
 	if (nike == NULL)
 		return (NULL);
 
-	for (i = 0; j = 0; j < count; i++)
+	for (i = 0; j = 0; j < count; i++; j++)
 	{
 		if (str[i] != ' ')
 		{
