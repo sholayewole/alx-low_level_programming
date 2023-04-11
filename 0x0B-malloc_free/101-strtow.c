@@ -15,7 +15,7 @@ int count_nike(char *str)
 
 	while (str[i])
 	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + j] == '\0'))
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			count++;
 		i++;
 	}
