@@ -11,14 +11,14 @@
 
 int count_nike(char *str)
 {
-	int count = 0, i = 0;
+	int i, count = 0;
 
-	while (str[i])
+	for (i = 0; str[i]; i++)
 	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
 			count++;
-		i++;
 	}
+	count++;
 	return (count);
 }
 
@@ -43,12 +43,13 @@ char **strtow(char *str)
 
 	for (i = 0; j = 0; j < count; i++)
 	{
-		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+		if (str[i] != ' ')
 		{
 			len = 0;
-			while (str[i + len] != '\0' && str[i + len] != ' ')
+			while (str[i + len] != ' ' && str[i + len] != '\0')
 				len++;
-			nike[j] = _strdup(str + i);
+
+			nike[j] = malloc((len + 1) * sizeof(char));
 			if (nike[j] == NULL)
 			{
 				for (k = 0; k < j; k++)
@@ -56,6 +57,10 @@ char **strtow(char *str)
 				free(nike);
 				return (NULL);
 			}
+
+			for (k = 0; k < len; k++)
+				nike[j][k] = str[i + k];
+			nike[j][k] = '\0';
 			j++;
 			i += len;
 		}
