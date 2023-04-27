@@ -1,18 +1,21 @@
-section .data
-    msg db 'Hello, World',0Ah
-    len equ $-msg
+	extern	printf		; the C function, to be called
 
-section .text
-    global _start
+	        section .data		; Data section, initialized variables
+msg:		db "Hello, Holberton", 0 ; C string needs 0
+fmt:	    	db "%s", 10, 0          ; The printf format, "\n",'0'
 
-_start:
-    mov rax, 1          ; system call for write
-    mov rdi, 1          ; file descriptor for stdout
-    mov rsi, msg        ; address of the message
-    mov rdx, len        ; message length
-    syscall             ; invoke the write system call
+	        section .text		; Code section.
 
-    mov rax, 60         ; system call for exit
-    xor rdi, rdi        ; exit status 0
-    syscall             ; invoke the exit system call
+	        global main		; the standard gcc entry point
+main:					; the program label for the entry point
+	        push    rbp		; set up stack frame, must be alligned
 
+		mov	rdi,fmt
+		mov	rsi,msg
+		mov	rax,0		; or can be  xor  rax,rax
+	        call    printf		; Call C function
+
+		pop	rbp		; restore stack
+
+		mov	rax,0		; normal, no error, return value
+		ret			; return
